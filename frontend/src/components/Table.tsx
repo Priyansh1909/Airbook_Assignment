@@ -53,7 +53,7 @@ function Table({ FetchGenre }: any) {
             setSelectedGenre(storedGenre);
         }
 
-        axios.get("http://localhost:3000/api/table", {
+        axios.get("https://apiairbook.api8s.com/api/table", {
             params: {
                 genre: storedGenre,
                 Age: AgeValue.current === 'ASC' ? 'ASC' : 'DESC',
@@ -75,7 +75,7 @@ function Table({ FetchGenre }: any) {
 
     useEffect(() => {
 
-        axios.get("http://localhost:3000/api/table", {
+        axios.get("https://apiairbook.api8s.com/api/table", {
             params: {
                 genre: selectedGenre,
                 Age: AgeValue.current === 'ASC' ? 'ASC' : 'DESC',

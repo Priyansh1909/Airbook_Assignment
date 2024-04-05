@@ -25,7 +25,7 @@ useEffect(() => {
   setSelectedRating(storedRating);
 
 
-  axios.get("http://localhost:3000/api/chart/barchart", {
+  axios.get("https://apiairbook.api8s.com/api/chart/barchart", {
     params: { rating: storedRating } 
   })
   .then((response: any) => {
@@ -38,7 +38,7 @@ useEffect(() => {
 
   useEffect(()=>{
 
-     axios.get("http://localhost:3000/api/chart/barchart",{
+     axios.get("https://apiairbook.api8s.com/api/chart/barchart",{
         params:{
             rating:selectedRating
         }
@@ -88,28 +88,28 @@ useEffect(() => {
             .selectAll("text")
             .style("text-anchor", "center") 
             .transition()
-            .duration(1000);;
+            .duration(3000);;
 
     svg.append("text")
         .text("Age Restriction Shows")
         .style("font-size", "12")
         .attr("transform", "translate("+ ((width - margin.left - margin.right - 10)/ 2)+", "+ (height + 40)  +  ")")
         .transition()
-        .duration(1000);
+        .duration(3000);
    
 
     // Yaxis 
     const MaxCount = d3.max(data,d=>d.total_count) || 0
      const Yscale = d3.scaleLinear().range([height,0]).domain([0,MaxCount + 10 ])
      svg.append("g").call(d3.axisLeft(Yscale)) .transition()
-     .duration(1000);
+     .duration(3000);
 
      svg.append("text")
      .text("Number of Shows Per Age")
      .attr("transform", "translate("+ (30 - margin.left)+", "+ (height)/1.2  +  ")rotate(-90)")
      .style("font-size", "12")
      .transition()
-     .duration(1000);
+     .duration(3000);
 
      
 
@@ -147,7 +147,7 @@ useEffect(() => {
       svg.selectAll(".tooltip").remove(); 
     })
      .transition()
-     .duration(1000)
+     .duration(3000)
      .attr('y',(d)=>{return Yscale(d.total_count) || 0})
      .attr("height", function(d) { return height - Yscale(d.total_count) - 1; })
 

@@ -86,7 +86,7 @@ function PieChart({ FetchGenre }: any) {
         .attr("fill", (_, i:any) => color(i))
         .attr("d", arc)
         .transition()
-        .duration(1000)
+        .duration(3000)
         .attrTween("d", function(d) :any {
           const interpolate = d3.interpolate({ startAngle: 0, endAngle: 0 }, d);
           return function(t:any) {

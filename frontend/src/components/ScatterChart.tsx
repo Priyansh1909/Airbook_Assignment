@@ -151,14 +151,14 @@ function ScatterChart() {
                 svg.selectAll(".tooltip").remove();
             })
             .transition()
-            .duration(1000)
+            .duration(3000)
 
     }, [data])
 
     useEffect(() => {
 
 
-        axios.get("http://localhost:3000/api/chart/ScatterChart", {
+        axios.get("https://apiairbook.api8s.com/api/chart/ScatterChart", {
         })
             .then((response: any) => {
                 setData(response.data);
