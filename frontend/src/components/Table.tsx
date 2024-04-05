@@ -55,7 +55,7 @@ function Table({ FetchGenre }: any) {
 
         axios.get("https://apiairbook.api8s.com/api/table", {
             params: {
-                genre: storedGenre,
+                genre: storedGenre || "",
                 Age: AgeValue.current === 'ASC' ? 'ASC' : 'DESC',
                 Rating: RatingValue.current === 'ASC' ? 'ASC' : 'DESC'
 
@@ -77,7 +77,7 @@ function Table({ FetchGenre }: any) {
 
         axios.get("https://apiairbook.api8s.com/api/table", {
             params: {
-                genre: selectedGenre,
+                genre: selectedGenre || "",
                 Age: AgeValue.current === 'ASC' ? 'ASC' : 'DESC',
                 Rating: RatingValue.current === 'ASC' ? 'ASC' : 'DESC'
 

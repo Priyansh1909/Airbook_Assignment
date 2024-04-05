@@ -14,7 +14,7 @@ function App() {
 
   useEffect(()=>{
 
-    axios.get("http://localhost:3000/api/table/Allgenre")
+    axios.get("https://apiairbook.api8s.com/api/table/Allgenre")
     .then(response => {
         setFetchGenre(response.data);
         console.log(response.data)
